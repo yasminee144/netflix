@@ -73,9 +73,9 @@ class _SearchPageState extends State<SearchPage> {
       });
       throw Exception('Failed to load trending media');
     }
-   }
+  }
 
-    Future<void> searchMedia(String query) async {
+  Future<void> searchMedia(String query) async {
     if (query.isEmpty) {
       _fetchAllMedia();
       return;
@@ -94,7 +94,7 @@ class _SearchPageState extends State<SearchPage> {
       final results = data['results'] as List;
 
       setState(() {
-        displayList = results.map((item) {  
+        displayList = results.map((item) {
           return MediaItem(
             item['title'] ?? item['name'],
             item['poster_path'] != null
